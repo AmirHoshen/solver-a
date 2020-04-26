@@ -12,7 +12,7 @@ namespace solver {
     };
     RealVariable RealVariable::operator-(RealVariable sec){
         RealVariable newVariable;
-        if (!this->leftside) {
+           if (!this->leftside) {
             newVariable.a = this->a + sec.a;
             newVariable.b = this->b + sec.b;
             newVariable.c = this->c + sec.c;
@@ -96,7 +96,7 @@ namespace solver {
     // };
     RealVariable RealVariable::operator/(double sec){
         RealVariable newVariable;
-        if(sec == 0)throw runtime_error("Cannot be divided by Zero!!!");
+        if(sec == 0)throw std::runtime_error("Cannot be divided by Zero!!!");
         newVariable.a = this->a/sec;
         newVariable.b = this->b/sec;
         newVariable.c = this->c/sec;
