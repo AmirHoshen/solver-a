@@ -6,9 +6,9 @@
 namespace solver {
     class RealVariable {
     public:
-        double a;
-        double b;
-        double c;
+        double pow;
+        double coefficient;
+        double constant;
         bool leftside;
         RealVariable();
         RealVariable operator-(RealVariable);
@@ -25,9 +25,9 @@ namespace solver {
     };
     class ComplexVariable {
     public:
-        std::complex<double> a;
-        std::complex<double> b;
-        std::complex<double> c;
+        std::complex<double> pow;
+        std::complex<double> coefficient;
+        std::complex<double> constant;
         bool leftside;
         ComplexVariable();
         ComplexVariable operator-(ComplexVariable);
