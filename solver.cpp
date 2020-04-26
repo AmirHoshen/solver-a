@@ -149,7 +149,7 @@ namespace solver {
         newVariable.leftside = false;
         return newVariable;
     };
-    RealVariable operator * (double sec ,const RealVariable & first){
+    RealVariable operator*(double sec ,const RealVariable & first){
         RealVariable newVariable;
         newVariable.a = first.a*sec;
         newVariable.b = first.b*sec;
@@ -157,7 +157,7 @@ namespace solver {
         newVariable.leftside = first.leftside;
         return newVariable;
     };
-    RealVariable operator + (double sec,const RealVariable & first){
+    RealVariable operator+(double sec,const RealVariable & first){
         RealVariable newVariable;
         if (!first.leftside) {
             newVariable.a = -first.a;
@@ -172,7 +172,7 @@ namespace solver {
         newVariable.leftside = first.leftside;
         return newVariable;
     };
-    RealVariable operator - (double sec,const RealVariable & first){
+    RealVariable operator-(double sec,const RealVariable & first){
         RealVariable newVariable;
         if (!first.leftside) {
             newVariable.a = first.a;
@@ -195,14 +195,13 @@ namespace solver {
         newVariable.leftside = false;
         return newVariable;
     };
+
     double solve(RealVariable equ){
         if (equ.a == 0){
             return -equ.c/equ.b;
         }
         return -equ.b/2 + std::sqrt(equ.b*equ.b-4*equ.a*equ.c)/2;
     };
-
-
 
 
 
