@@ -73,7 +73,7 @@ namespace solver {
 
     RealVariable RealVariable::operator*(RealVariable other){
         RealVariable newVariable;
-        newVariable.pow = this->pow*sec.constant + this->coefficient*other.coefficient + this->constant*other.pow;
+        newVariable.pow = this->pow*other.constant + this->coefficient*other.coefficient + this->constant*other.pow;
         newVariable.coefficient = this->coefficient*other.constant + this->constant*other.coefficient;
         newVariable.constant = this->constant*other.constant;
         newVariable.leftside = this->leftside;
@@ -114,7 +114,7 @@ namespace solver {
         newVariable.constant = this->constant;
         newVariable.leftside = this->leftside;
         if (other>2 || other<0) {
-            throw std::exception("line 117 if error other>2 ?!");
+            throw std::runtime_error("line 117 if error other>2 ?!");
         }
         if (other == 0) {
             newVariable.pow = 0;
@@ -126,7 +126,7 @@ namespace solver {
             return newVariable;
         }
         if (newVariable.pow != 0) {
-            throw std::exception("line 129 broken if statement");
+            throw std::runtime_error("line 129 broken if statement");
         }
         newVariable.pow = this->coefficient*this->coefficient;
         newVariable.coefficient = 2*this->coefficient*this->constant;
