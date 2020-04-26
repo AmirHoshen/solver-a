@@ -96,6 +96,7 @@ namespace solver {
     // };
     RealVariable RealVariable::operator/(double sec){
         RealVariable newVariable;
+        if(sec == 0)throw runtime_error("Cannot be divided by Zero!!!");
         newVariable.a = this->a/sec;
         newVariable.b = this->b/sec;
         newVariable.c = this->c/sec;
