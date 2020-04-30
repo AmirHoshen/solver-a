@@ -195,6 +195,7 @@ namespace solver {
     };
 
     double solve(RealVariable equ){
+        if(equ.coefficient < 0 ) throw std::exception();
         if (equ.pow == 0){
             return -equ.constant/equ.coefficient;
         }
