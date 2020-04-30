@@ -113,18 +113,16 @@ namespace solver {
         newVariable.coefficient = this->coefficient;
         newVariable.constant = this->constant;
         newVariable.leftside = this->leftside;
-        if (other>2 || other<0) {
-            throw std::runtime_error("line 117 if error other>2 ?!");
-        }
+        if (other>2)throw std::runtime_error("line 117 if error other>2 ?!");
+        if(other < 0)throw std::exception();
         if (other == 0) {
             newVariable.pow = 0;
             newVariable.coefficient = 0;
             newVariable.constant = 1;
             return newVariable;
         }
-        if (other == 1) {
-            return newVariable;
-        }
+        if (other == 1)return newVariable;
+
         if (newVariable.pow != 0) {
             throw std::runtime_error("line 129 broken if statement");
         }
